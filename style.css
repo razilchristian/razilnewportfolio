@@ -234,13 +234,30 @@ a {
   margin: 0 0 10px;
 }
 .hero-art .hero-image {
-  border-radius: 44px; /* Rounded corners */
+  border-radius: 44px;
   display: block;
-  max-width: 150%; /* Slightly larger than container width */
+  max-width: 150%;
   width: auto;
   height: auto;
-  margin-left: -5%; /* center bigger image horizontally */
+  margin-left: -5%;
 }
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .hero-art {
+    height: auto; /* Let it adjust based on image */
+    text-align: center; /* Center container */
+    padding: 0 12px;
+  }
+  .hero-art .hero-image {
+    max-width: 100%; /* Fit inside container */
+    width: 100%; /* Full width */
+    border-radius: 24px; /* Less rounded on small screen for subtlety */
+    margin-left: 0; /* Reset centering offset */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
 
 
 .grad {
