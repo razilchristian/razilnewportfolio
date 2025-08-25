@@ -1,5 +1,3 @@
-// script.js
-
 // Animated cycling words inside the search bar, with accessibility fallbacks.
 (function () {
   const holder = document.querySelector(".cycling span");
@@ -31,6 +29,15 @@ document.querySelectorAll("nav a.nav-link").forEach((link) => {
       nav.classList.remove("active")
     );
     link.classList.add("active");
+
+    // Close hamburger menu on link click (for mobile)
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    if (hamburger && navLinks.classList.contains("show")) {
+      hamburger.setAttribute("aria-expanded", false);
+      hamburger.classList.remove("open");
+      navLinks.classList.remove("show");
+    }
   });
 });
 
@@ -51,3 +58,16 @@ document.querySelector(".btn-grad")?.addEventListener("click", () => {
     c.style.transition = "outline 0.2s ease";
   });
 });
+
+// Hamburger menu toggle for mobile
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('show');
+  });
+}

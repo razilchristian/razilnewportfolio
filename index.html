@@ -15,28 +15,27 @@
 </head>
 <body>
   <nav class="nav" role="navigation" aria-label="Primary">
-    <div class="brand" tabindex="0">
-      <img src="mypic.jpeg" alt="Razil Christian Logo" class="logo" />
-      <span>Razil Christian</span>
-    </div>
-    <ul class="nav-links" role="menubar">
-      <li role="none">
-        <a href="#home" role="menuitem" tabindex="0" class="nav-link active">Home</a>
-      </li>
-      <li role="none">
-        <a href="#about" role="menuitem" tabindex="-1" class="nav-link">About</a>
-      </li>
-      <li role="none">
-        <a href="#skills" role="menuitem" tabindex="-1" class="nav-link">Skills</a>
-      </li>
-      <li role="none">
-        <a href="#projects" role="menuitem" tabindex="-1" class="nav-link">Projects</a>
-      </li>
-      <li role="none">
-        <a href="#contact" role="menuitem" tabindex="-1" class="nav-link">Contact</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="brand" tabindex="0">
+    <img src="mypic.jpeg" alt="Razil Christian Logo" class="logo" />
+    <span>Razil Christian</span>
+  </div>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+
+  <ul id="nav-menu" class="nav-links" role="menubar">
+    <li role="none"><a href="#home" role="menuitem" tabindex="0" class="nav-link active">Home</a></li>
+    <li role="none"><a href="#about" role="menuitem" tabindex="-1" class="nav-link">About</a></li>
+    <li role="none"><a href="#skills" role="menuitem" tabindex="-1" class="nav-link">Skills</a></li>
+    <li role="none"><a href="#projects" role="menuitem" tabindex="-1" class="nav-link">Projects</a></li>
+    <li role="none"><a href="#contact" role="menuitem" tabindex="-1" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+
 
  <section id="home" class="hero">
   <div class="hero-content">
