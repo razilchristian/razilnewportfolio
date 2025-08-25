@@ -789,3 +789,58 @@ a {
   font-size: 14px;
   user-select: none;
 }
+@media (max-width: 960px) {
+  /* Reduce padding and margins */
+  section,
+  .section-head,
+  .hero-content,
+  .cards,
+  .skills {
+    padding: 12px 16px;
+    margin: auto;
+  }
+  /* Adjust font sizes */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  /* Responsive grid columns */
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  /* Reduce card padding */
+  .card {
+    padding: 18px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further font size reductions */
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  /* Stack layout sections vertically */
+  .hero-content {
+    text-align: center;
+  }
+  /* Make buttons full width */
+  .btn-glow, .btn-outline {
+    width: 100%;
+    display: block;
+  }
+  /* Navigation tweaks */
+  .nav-links {
+    display: none; /* You can add hamburger menu */
+  }
+}
