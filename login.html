@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Razil Christian Portfolio</title>
+  <style>
+    :root {
+      --bg: #12002f;
+      --panel: #180041;
+      --primary: #fd3577;
+      --secondary: #ad35fd;
+      --accent: #16c7f3;
+      --white: #fff;
+      --glow: 0 0 24px #ad35fd, 0 0 48px #16c7f3, 0 0 24px #fd3577;
+    }
+    body {
+      background: radial-gradient(circle at 60% 0%, #ad35fd80 0%, #12002f 40%), var(--bg);
+      min-height: 100vh;
+      color: var(--white);
+      font-family: 'Inter', 'Space Grotesk', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .auth-container {
+      max-width: 400px;
+      margin: 48px auto 32px auto;
+      background: var(--panel);
+      border-radius: 28px;
+      box-shadow: var(--glow);
+      padding: 36px 24px 28px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .auth-title {
+      font-size: 2.6rem;
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin: 0 0 12px 0;
+    }
+    .auth-avatar {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 7px #ad35fd40;
+      object-fit: cover;
+    }
+    .auth-form label {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 22px 0 8px 0;
+      font-size: 1.08rem;
+    }
+    .auth-form input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 2px solid #ad35fd;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-size: 1.03rem;
+      color: #ad9dea;
+      margin-bottom: 4px;
+      outline: none;
+      transition: border-color 0.3s;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    ::placeholder {
+      color: #ad9dea;
+      opacity: 0.8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .auth-form input:focus {
+      border-color: var(--primary);
+      color: var(--accent);
+    }
+    .input-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ad9dea;
+      font-size: 0.95em;
+      margin-bottom: 4px;
+    }
+    .input-row .forgot-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.96em;
+    }
+    .input-row .forgot-link:hover {
+      text-decoration: underline;
+    }
+    .auth-form input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      vertical-align: middle;
+    }
+    .btn-glow {
+      width: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
+      border: none;
+      padding: 18px 0;
+      font-size: 1.25em;
+      font-weight: bold;
+      color: var(--white);
+      border-radius: 40px;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: var(--glow);
+      transition: filter 0.3s, box-shadow 0.4s;
+      letter-spacing: 1px;
+      font-family: "Space Grotesk", sans-serif;
+    }
+    .btn-glow:hover {
+      filter: brightness(1.07) saturate(1.2);
+      box-shadow: var(--glow), 0 0 40px #fd3577;
+    }
+    .auth-btn-secondary {
+      background: #232048;
+      color: var(--white);
+      border-radius: 40px;
+      font-weight: bold;
+      margin-top: 14px;
+      padding: 14px 0;
+      box-shadow: 0 0 14px #ad35fd80;
+      text-align: center;
+      width: 100%;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      font-family: "Space Grotesk", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .auth-btn-secondary:hover {
+      background-color: #331d6c;
+      box-shadow: 0 0 24px var(--secondary);
+    }
+    .auth-btn-secondary img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: brightness(110%) contrast(120%);
+      background-color: transparent !important;
+      mix-blend-mode: lighten;
+    }
+    .or-divider {
+      text-align: center;
+      color: #ad9dea;
+      font-weight: 700;
+      margin: 18px 0 10px 0;
+      letter-spacing: 2px;
+      border-top: 1.5px solid #ad35fd55;
+      position: relative;
+    }
+    .or-divider span {
+      background: var(--panel);
+      color: #ad9dea;
+      font-size: 1.1em;
+      position: relative;
+      top: -13px;
+      padding: 0 12px;
+    }
+    .auth-message {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--muted);
+      user-select: none;
+      font-family: Inter, sans-serif;
+    }
+    .auth-message a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: text-decoration 0.3s ease;
+    }
+    .auth-message a:hover,
+    .auth-message a:focus {
+      text-decoration: underline;
+    }
+    .footer {
+      color: #ad9dea;
+      text-align: center;
+      margin-top: 42px;
+      font-size: 1em;
+      user-select: none;
+      padding-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+    @media (max-width: 480px) {
+      .auth-container {
+        max-width: 98vw;
+        padding: 20px 8px;
+        margin: 24px auto 18px auto;
+      }
+      .auth-title {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+      if (email === "razil@example.com" && password === "razil123") {
+        window.location.href = "index.html";
+      } else {
+        alert("Sorry, email or password is incorrect.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="auth-container">
+    <img src="mypic.jpeg" alt="User avatar" class="auth-avatar" />
+    <h1 class="auth-title">Welcome back</h1>
+    <form class="auth-form" onsubmit="handleLogin(event)" novalidate>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" placeholder="you@email.com" required />
+      <div class="input-row">
+        <label for="login-password" style="margin-bottom:0;">Password</label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+      <input type="password" id="login-password" name="password" placeholder="*********" required />
+      <label><input type="checkbox" name="remember" /> Remember me</label>
+      <button type="submit" class="btn-glow">Login</button>
+    </form>
+    <div class="or-divider"><span>OR</span></div>
+    <button type="button" class="auth-btn-secondary">
+      <img src="apple (1).png" alt="Apple logo" /> Sign in with Apple
+    </button>
+    <button type="button" class="auth-btn-secondary">
+      <img src="google (2).png" alt="Google logo" /> Sign in with Google
+    </button>
+    <p class="auth-message">
+      Don't have an account? <a href="register.html">Register</a>
+    </p>
+  </main>
+</body>
+</html>

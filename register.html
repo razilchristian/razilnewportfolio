@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Razil Christian Portfolio</title>
+  <style>
+    :root {
+      --bg: #12002f;
+      --panel: #180041;
+      --primary: #fd3577;
+      --secondary: #ad35fd;
+      --accent: #16c7f3;
+      --muted: #ad9dea;
+      --white: #fff;
+      --glow: 0 0 24px #ad35fd, 0 0 48px #16c7f3, 0 0 24px #fd3577;
+    }
+    body {
+      background: radial-gradient(circle at 60% 0%, #ad35fd80 0%, #12002f 40%), var(--bg);
+      min-height: 100vh;
+      color: var(--white);
+      font-family: 'Inter', 'Space Grotesk', Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    .auth-container {
+      max-width: 400px;
+      margin: 45px auto 30px auto;
+      background: var(--panel);
+      border-radius: 28px;
+      box-shadow: var(--glow);
+      padding: 38px 24px 30px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .auth-title {
+      font-size: 2.6rem;
+      text-align: center;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin: 0 0 8px 0;
+    }
+    .auth-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.16rem;
+      margin-bottom: 28px;
+    }
+    .auth-form label {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 22px 0 8px 0;
+      font-size: 1.08rem;
+    }
+    .auth-form input,
+    .auth-form select {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 2px solid #ad35fd;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      outline: none;
+      transition: border-color 0.3s;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+    .auth-form input::placeholder,
+    .auth-form select:invalid {
+      color: #ad9dea;
+      opacity: 0.7;
+      font-size: 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .auth-form input:focus,
+    .auth-form select:focus {
+      border-color: var(--primary);
+      color: var(--accent);
+    }
+    .auth-form select {
+      background: transparent;
+      color: var(--muted);
+      font-family: Inter, sans-serif;
+    }
+    .terms-text {
+      margin: 18px 0 2px 0;
+      color: var(--muted);
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .terms-link {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .terms-link:hover {
+      text-decoration: underline;
+    }
+    .btn-glow {
+      width: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--secondary), var(--primary));
+      border: none;
+      padding: 20px 0;
+      font-size: 1.28em;
+      font-weight: bold;
+      color: var(--white);
+      border-radius: 40px;
+      margin-top: 28px;
+      cursor: pointer;
+      box-shadow: var(--glow), 0 0 40px #fd3577;
+      letter-spacing: 1px;
+      font-family: "Space Grotesk", sans-serif;
+      transition: filter 0.25s, box-shadow 0.3s;
+    }
+    .btn-glow:hover {
+      filter: brightness(1.09) saturate(1.2);
+      box-shadow: var(--glow), 0 0 50px #fd3577;
+    }
+    .footer {
+      color: #ad9dea;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1em;
+      user-select: none;
+      padding-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+      border-radius: 14px;
+      background: rgba(33,20,49,0.7);
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 18px;
+      padding: 7px 18px;
+      box-shadow: 0 4px 18px #960fe641;
+    }
+    .auth-message {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--muted);
+      user-select: none;
+      font-family: Inter, sans-serif;
+    }
+    .auth-message a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .auth-message a:hover,
+    .auth-message a:focus {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .auth-container {
+        max-width: 98vw;
+        padding: 20px 8px;
+        margin: 24px auto 18px auto;
+      }
+      .auth-title {
+        font-size: 2.1rem;
+      }
+      .footer {
+        font-size: 0.93em;
+        padding: 5px 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="auth-container">
+    <h1 class="auth-title">Create Account</h1>
+    <div class="auth-subtitle">Please fill in the form to register.</div>
+    <form class="auth-form" novalidate>
+      <label for="reg-name">Full Name</label>
+      <input type="text" id="reg-name" name="fullname" placeholder="Your full name" required />
+      <label for="reg-email">Email</label>
+      <input type="email" id="reg-email" name="email" placeholder="you@email.com" required />
+      <label for="reg-phone">Phone Number</label>
+      <input type="tel" id="reg-phone" name="phone" placeholder="Enter phone number" required />
+      <label for="reg-password">Password</label>
+      <input type="password" id="reg-password" name="password" placeholder="Enter password" required />
+      <label for="reg-confirm">Confirm Password</label>
+      <input type="password" id="reg-confirm" name="confirm_password" placeholder="Confirm password" required />
+      <label for="reg-gender">Gender</label>
+      <select id="reg-gender" name="gender" required>
+        <option value="" disabled selected>Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+        <option value="prefer_not">Prefer not to say</option>
+      </select>
+      <div class="terms-text">
+        By creating an account you agree to our
+        <a href="#" class="terms-link">Terms & Privacy</a>.
+      </div>
+      <button type="submit" class="btn-glow">Register</button>
+    </form>
+    
+    <div class="auth-message">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </main>
+</body>
+</html>
